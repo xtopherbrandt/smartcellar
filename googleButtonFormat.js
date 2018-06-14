@@ -6,7 +6,6 @@ function renderButton() {
       'height': 50,
       'longtitle': true,
       'theme': 'dark',
-      'onsuccess': onSignIn,
-      'onfailure': onFailure
+      'onsuccess': onSignIn
     });
   }
