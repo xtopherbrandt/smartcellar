@@ -8,7 +8,7 @@ function onSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     $("#userId").text( profile.getName() );
     $("#signout").removeAttr( "hidden" );
-    $("#signin").attr( "hidden" );
+    $("#signin").attr( "hidden", "" );
 }   
 
 function signOut() {
@@ -18,5 +18,5 @@ function signOut() {
     });
     $("#userId").text( "" );
     $("#signin").removeAttr( "hidden" );
-    $("#signout").attr( "hidden" );
+    $("#signout").attr( "hidden", "" );
 }
