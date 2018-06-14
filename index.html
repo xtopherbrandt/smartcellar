@@ -48,14 +48,18 @@
                     <li><a class="nav-link" href="/">About</a></li>
                     <li><a class="nav-link" href="/">Contact</a></li>
                 </ul>
-                <p id="userId" class="navbar-text navbar-right"></p>
+                <ul class="navbar-nav navbar-right">
+                    <li id="userId" class="dropdown">
+                        <p class="navbar-text navbar-right"></p>    
+                    </li>
+                    <li id="signin" class="g-signin2" data-onsuccess="onSignIn"></li>                    
+                </ul>
             </div>
 
 
         </div>
     </nav>
                         
-    <div id="signin" class="g-signin2" data-onsuccess="onSignIn"></div>
     <a id="signout" href="#" >Sign out</a>
 
     <div class="container body-content">
