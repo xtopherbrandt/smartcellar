@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    
+    $("signout").click( () => { signOut(); } );
 
 });
 
@@ -10,6 +10,8 @@ function onSignIn(googleUser) {
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     $("#userId").text( profile.getName() );
+    $("#signout").removeAttr( "hidden" );
+    $("#signin").attr( "hidden" );
 }   
 
 function signOut() {
@@ -18,4 +20,6 @@ function signOut() {
         console.log('User signed out.');
     });
     $("#userId").text( "" );
+    $("#signin").removeAttr( "hidden" );
+    $("#signout").attr( "hidden" );
 }
