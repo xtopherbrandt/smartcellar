@@ -1,7 +1,4 @@
-$(document).ready(function() {
-    $("signout").click( () => { signOut(); } );
 
-});
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
