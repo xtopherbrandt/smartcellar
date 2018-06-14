@@ -13,6 +13,8 @@
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
     <link rel="stylesheet" href="/static/scripts/bootstrap-sortable/Contents/bootstrap-sortable.css" />
     <link rel="stylesheet" href="/static/content/d3-chart.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="993445593712-5bvnlkmj9o06d1rq18u0lkd15okrg94g.apps.googleusercontent.com">
 
     <!-- 
     To collect end-user usage analytics about your application, 
@@ -37,26 +39,28 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a href="/" class="navbar-brand">Red Lily</a>
+            <a href="/" class="navbar-brand">My Wine Cellar</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-                
+            
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
             <div class="navbar-collapse collapse" id="navbarSupportedContent">
                 <ul class="mr-auto navbar-nav">
-                    <li><a class="nav-link" href="{{ url_for('home') }}">Home<span class="sr-only">(current)</span></a></li>
-                    <li><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
-                    <li><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a></li>
+                    <li><a class="nav-link" href="/">About</a></li>
+                    <li><a class="nav-link" href="/">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container body-content">
-        {% block content %}{% endblock %}
+
         <hr />
         <footer>
-            <p>&copy; {{ year }} - Red-Lily-Performance.com</p>
+            <p>&copy; 2018 - Christopher Brandt</p>
         </footer>
     </div>
 
@@ -70,6 +74,15 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="/static/scripts/d3-chart.js"></script>
 
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }    
+    </script>
  
 </body>
 </html>
