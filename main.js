@@ -28,7 +28,7 @@ function renderButton() {
       'height': 50,
       'longtitle': true,
       'theme': 'dark',
-      'onsuccess': onSuccess,
+      'onsuccess': onSignIn,
       'onfailure': onFailure
     });
   }
