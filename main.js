@@ -6,8 +6,8 @@ function onSignIn(googleUser) {
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    $("#userId").text( profile.getName() );
-    $("#signout").removeAttr( "hidden" );
+    $("#userId>p").text( profile.getName() );
+    $("#userId").removeAttr( "hidden" );
     $("#signin").attr( "hidden", "" );
 }   
 
@@ -16,7 +16,7 @@ function signOut() {
     auth2.signOut().then(function () {
         console.log('User signed out.');
     });
-    $("#userId").text( "" );
+    $("#userId>p").text( "" );
+    $("#userId").attr( "hidden", "" );
     $("#signin").removeAttr( "hidden" );
-    $("#signout").attr( "hidden", "" );
 }
